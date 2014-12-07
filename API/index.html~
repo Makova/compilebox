@@ -32,23 +32,8 @@ h3{
 		This is an example client to demo the sandboxed compiling.
 	</p>
 	<h3>Code Compile</h3>
-    <label>Language ID <!--<a href="#" id="langhelp">(list)</a>-->:</label>
-    <!--<input type='text' id="langid" value=0>-->
-    <input type="radio" name="langid" value="0">Python
-    <input type="radio" name="langid" value="1">Ruby
-    <input type="radio" name="langid" value="2">Clojure
-    <input type="radio" name="langid" value="3">PHP
-    <input type="radio" name="langid" value="4">JavaScript
-    <input type="radio" name="langid" value="5">Scala
-    <input type="radio" name="langid" value="6">Go
-    <input type="radio" name="langid" value="7">C/C++
-    <input type="radio" name="langid" value="8">Java
-    <input type="radio" name="langid" value="9">VB.NET
-    <input type="radio" name="langid" value="10">C#
-    <input type="radio" name="langid" value="11">Bash
-    <input type="radio" name="langid" value="12">Objetive-C
-    <input type="radio" name="langid" value="13">MySql
-    <input type="radio" name="langid" value="14">Perl
+    <label>Language ID <a href="#" id="langhelp">(list)</a>:</label>
+    <input type='text' id="langid" value=0>
     <br>
     <label>Code:</label>
     <textarea id="code">print 'Hello!'</textarea>
@@ -58,7 +43,7 @@ h3{
     <textarea id="stdin">
         hello
     </textarea>
-
+    
 
     <input type="button" value="Compile" id="send">
     <p class="output" id="output">Output appears here</p>
@@ -80,7 +65,7 @@ h3{
     	var langs = [];
     	for (var i in LANGS)
     	{
-    		msg += LANGS[i][0] + ": " + i +"\n";
+    		msg += LANGS[i][0] + ": " + i +"\n";	
     	}
 
     	alert(msg);
@@ -89,7 +74,7 @@ h3{
 
     //COMPILE USER GIVEN CODE
     $('#send').on('click', function() {
-        var langid = $('input[name="langid"]:checked').val();
+        var langid = $('#langid').val();
         var codeF = $('#code').val();
         var stdin = $('#stdin').val();
 
@@ -137,4 +122,3 @@ h3{
 </body>
 
 </html>
-
